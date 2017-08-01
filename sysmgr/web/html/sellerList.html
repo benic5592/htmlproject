@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>商家列表</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/login.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+    <header class="page-header"></header>
+</div>
+
+<div class="container">
+
+    <form >
+        <div class="form-group">
+            <label for="sidId" >商家ID</label>
+            <input type="text"  id="sidId" >
+            <span id="sidSpan" style="color: red;"></span>
+
+            <label for="snameId" >商家名</label>
+            <input type="text"  id="snameId"  >
+            <span id="snameSpan" style="color: red;"></span>
+
+            <label for="stelId" >电话</label>
+            <input type="text"  id="stelId"  >
+            <span id="stelSpan" style="color: red;"></span>
+        </div>
+
+        <div class="form-group">
+            <label >商家分类</label>
+
+            <input type="radio"  name="stypeName" id="rall" checked value=""><label for="rall" style="text-align: center">全部</label>
+            <input type="radio"  name="stypeName" id="rcn"  value="中餐"><label for="rcn" style="text-align: center">中餐</label>
+            <input type="radio"  name="stypeName" id="rkr" value="韩式"><label for="rkr" style="text-align: center">韩式</label>
+            <input type="radio"  name="stypeName" id="rjp"  value="日料"><label for="rjp" style="text-align: center">日料</label>
+
+        </div>
+
+        <div class="form-group">
+            <label  >商家地址</label>
+            <select id="sdistrictId" >
+                <option selected value="">全部</option>
+                <option value="甘井子区">甘井子区</option>
+                <option value="沙河口区">沙河口区</option>
+                <option value="中山区">中山区</option>
+            </select>
+            <span id="sdistrictSpan" style="color: red;"></span>
+
+            <label for="saddressId" >详细地址</label>
+            <input type="text"  id="saddressId"  >
+            <span id="saddressSpan" style="color: red;"></span>
+        </div>
+
+        <div class="form-group">
+            <label  >人均消费</label>
+            <input type="text"  id="sperFromId"  >
+            ～
+            <input type="text"  id="sperToId"  >
+            <span >元/人</span>
+            <span id="sperSpan" style="color: red;"></span>
+        </div>
+
+
+        <input type="reset"  class="btn  btn-warning" style="width: 6%"value="清空" >
+        <input type="submit"  class="btn  btn-primary" style="width: 12%;margin-left: 150px" value="查询" ><br>
+    </form>
+</div><!-- /container -->
+
+
+
+<div class="container" style="margin-top: 20px">
+    <div style="width: 100%" >
+        <button id="btnDel" class="btn">删除所选商户</button>
+        <button id="btnCreate" class="btn  btn-danger" style="float: right">添加新商户</button>
+    </div>
+    <div id="tbdiv">
+
+    </div>
+    <div id="pagediv">
+
+        <button id="btnHome">首页</button>
+        <button id="btnPrev">上一页</button>
+
+        <span id="currentPage" >1</span>/
+        <span id="totalPage" >1</span>
+
+        <button id="btnNext">下一页</button>
+        <button id="btnLast">末页</button>
+        <button id="btnGoto">跳转到</button>
+        <input type="text" style="width: 40px" id="gotoInput">页
+        <span id="linage" hidden="hidden">5</span>
+    </div>
+</div>
+</body>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery-1.11.3.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.js"></script>
+<script src="../js/seller/sellerList.js"></script>
+<script src="../js/util/time.js"></script>
+
+</body>
+</html>

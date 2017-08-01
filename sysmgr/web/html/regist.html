@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>注册</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/login.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <header class="page-header"></header>
+</div>
+<div class="container">
+    <div class="form-signin" >
+<input type="text" name="nUser" id="idUser" placeholder="请输入用户名" class="form-control"><span id="userSpan" style="color: red;" ></span><br>
+<input type="password" name="nPwd" maxlength="8" id="idPwd" placeholder="请输入密码" class="form-control"><span id="pwdSpan" style="color: red;"></span><br>
+<input type="password" name="nPwdAgain" maxlength="8" id="idPwdAgain" placeholder="请再次输入密码" class="form-control"><span id="pwdAgainSpan" style="color: red;"></span><br>
+
+<button id="btnRegist" class="btn btn-lg btn-primary btn-block" >注册</button>
+    </div>
+</div><!-- /container -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery-1.11.3.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.js"></script>
+<script src="../js/user/regist.js"></script>
+<script src="../js/util/time.js"></script>
+</body>
+</html>

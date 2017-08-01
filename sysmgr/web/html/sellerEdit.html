@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>保存商家</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/login.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+<header class="page-header"></header>
+</div>
+
+<div class="container">
+
+    <form >
+        <div id="idDiv" class="form-group"><label >商家ID</label><span id="idSpan"></span><br></div>
+
+        <div class="form-group">
+        <label for="snameId" >商家名</label>
+        <input type="text"  id="snameId" placeholder="请输入商家名称" required>
+        <span id="snameSpan" style="color: red;"></span>
+        </div>
+
+        <div class="form-group">
+        <label for="stelId" >电话</label>
+        <input type="text"  id="stelId" placeholder="请输入商家电话" required>
+            <span id="stelSpan" style="color: red;"></span>
+        </div>
+
+        <div class="form-group">
+            <label >商家分类</label>
+            <input type="radio"  name="stypeName" id="rcn" value="中餐" checked ><label for="rcn" style="text-align: center">中餐</label>
+            <input type="radio"  name="stypeName" id="rkr" value="韩式" ><label for="rkr" style="text-align: center">韩式</label>
+            <input type="radio"  name="stypeName" id="rjp" value="日料" ><label for="rjp" style="text-align: center">日料</label>
+
+        </div>
+
+        <div class="form-group">
+            <label  >商家地址</label>
+            <select id="sdistrictId" required>
+                <option value="甘井子区" selected>甘井子区</option>
+                <option value="沙河口区">沙河口区</option>
+                <option value="中山区">中山区</option>
+            </select>
+            <span id="sdistrictSpan" style="color: red;"></span>
+        </div>
+
+
+        <div class="form-group">
+            <label for="saddressId" >详细地址</label>
+            <input type="text"  id="saddressId" placeholder="请输入商家详细地址" required>
+            <span id="saddressSpan" style="color: red;"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="sperId" >人均消费</label>
+            <input type="text"  id="sperId" placeholder="请输入人均消费" required>
+            <span >元/人</span>
+            <span id="sperSpan" style="color: red;"></span>
+        </div>
+
+
+        <input type="reset"  class="btn  btn-warning" style="width: 6%"value="清空" >
+        <input type="submit"  class="btn  btn-primary" style="width: 12%;margin-left: 50px" value="保存" ><br>
+    </form>
+</div><!-- /container -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/jquery.params.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.js"></script>
+<script src="../js/seller/sellerEdit.js"></script>
+<script src="../js/util/time.js"></script>
+
+</body>
+</html>
