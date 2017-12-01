@@ -260,26 +260,31 @@ $(function () {
         // 删除按钮
         $("#btnDel").click(function () {
             if(confirm("确定删除所选商家?")){
+                var idArr = [];
+                var cbxArr = [];
                 //点击确定后操作
                 $("input[name='scb']:checked").each(function(i){
 
                     var $this = $(this);
 
                     var id = $this.parent().next().text();
-                    $.post(
-                        "/sysmgr/sellerDelete",{
-                            id:id
-                        },function (data,textstatus) {
-                            if("success" == data.status){
-                                $this.parent().parent().remove();
-                            } else {
-                                alert(data.msg);
-                            }
-                        },"json"
-                    );
-
-
+                    idArr[i] = id;
+                    cbxArr[i] = $this;
                 });
+                $.post(
+                    "/sysmgr/sellerDelete",{
+                        id:idArr
+                    },function (data,textstatus) {
+                        if("success" == data.status){
+                            $("input[name='scb']:checked").each(function(i){
+                                $(this).parent().parent().remove();
+                            });
+
+                        } else {
+                            alert(data.msg);
+                        }
+                    },"json"
+                );
             }
 
 

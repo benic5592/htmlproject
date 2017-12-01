@@ -15,6 +15,7 @@ import java.io.IOException;
  * Created by Administrator on 2017/6/21.
  */
 public class LoginController extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
@@ -40,6 +41,7 @@ public class LoginController extends HttpServlet {
 
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         doPost(request, response);

@@ -20,7 +20,7 @@ public class SellerDeleteController extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         SellerService ss = new SellerService();
 
-        boolean result = ss.deleteSeller(request.getParameter("id"));
+        boolean result = ss.deleteSeller(request.getParameterValues("id[]"));
 
         Gson gson = new Gson();
         ResultModel resultModel = new ResultModel();

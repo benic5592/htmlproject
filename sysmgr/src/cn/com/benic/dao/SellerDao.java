@@ -111,25 +111,30 @@ public class SellerDao {
 
     /**
      * 删除商家(逻辑删除)
-     * @param id
+     * @param idArr
      * @return
      */
-    public int deleteSeller(String id){
+    public int deleteSeller(String[] idArr){
 
         PreparedStatement presta=null;
-        int count = -1;
+        int[] count = null;
         try{
             ConnectionUtil.getConn().setAutoCommit(false);
 
             String sql="update t_seller set del_flg=? where id=?";
             presta = ConnectionUtil.getConn().prepareStatement(sql);
-            presta.setString(1, CommonConstants.DELETE_FLG_YES);
-            presta.setString(2,id);
-            count = presta.executeUpdate();
+
+            for(String id : idArr){
+                presta.setString(1, CommonConstants.DELETE_FLG_YES);
+                presta.setString(2,id);
+                presta.addBatch();
+            }
+
+            count = presta.executeBatch();
 
             ConnectionUtil.getConn().commit();
 
-            return count;
+            return count.length;
 
         }catch(SQLException e){
             e.printStackTrace();

@@ -49,12 +49,12 @@ public class SellerService {
 
     /**
      * 删除商家(逻辑删除)
-     * @param id
+     * @param idArr
      * @return
      */
-    public boolean deleteSeller(String id){
+    public boolean deleteSeller(String[] idArr){
 
-        int  count = dao.deleteSeller(id);
+        int  count = dao.deleteSeller(idArr);
 
         if(count > 0){
             return true;
